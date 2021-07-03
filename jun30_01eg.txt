@@ -1,0 +1,39 @@
+using System;
+
+
+  class Program
+  {
+    enum Week
+    {
+      Sun,
+      Mon,
+      Tue,
+      Wed,
+      Thr,
+      Fri,
+      Sat
+    }
+        static void Main(string[] args) 
+         {
+             Console.WriteLine("Choose valur from option : Mon,Tue,Wed..: ");
+             String str=Console.ReadLine();
+            // Week myVar=0;// =  Week.parse(str);
+             Enum.TryParse(str, out Week myVar);
+           
+          switch(myVar) 
+          {
+            case Week.Mon:
+              Console.WriteLine("You Choose MONDAY");
+              break;
+            case Week.Tue:
+               Console.WriteLine("You Choose Tuesday");
+              break;
+            case Week.Wed:
+              Console.WriteLine("You Choose Wednesday");
+              break;
+            default:
+              Console.WriteLine("ITS A Holiday");
+              break;
+          }
+        }
+}
