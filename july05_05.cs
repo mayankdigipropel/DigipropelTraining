@@ -1,39 +1,23 @@
 using System;
 
- 
+public class CountWordFile
+{
+	public static void Main()
+	{
+		String line;
+		int count = 0;
+		//Opens a file in read mode
+		System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\user\Desktop\textfile.txt");
+		//Gets each line till end of file is reached
+		while ((line = file.ReadLine()) != null)
+		{
+			//Splits each line into words
+			String[] words = line.Split(' ');
+			//Counts each word
+			count = count + words.Length;
+		}
 
-  public  class Table // created a class called table 
-    {
-        private int width = 0; //defined private variables
-        private int height = 0; //defined private variables
-
- 
-
-        public Table(int width, int height) //created a parameterized constructor
-        {
-            if (width >= 0) this.width = width;
-            if (height >= 0) this.height = height;
-        }
-        public void ShowData()
-        {
-            Console.WriteLine("Height - {0} cm, width - {1} cm", height, width);
-    }
-   public class Program
-    {
-        public static void Main(string[] args)
-        {
-            Table[] arr = new Table[10];
-            Random value = new Random(); //generate the random values for the input
-            for(int i = 0; i<10; i++) // looping through
-            arr[i] = new Table(value.Next(50, 200), value.Next(50,200)); 
-            foreach (var i in arr)
-            i.ShowData(); // writing output using loop
-        }
-    }
+		Console.WriteLine("Number of words present in given file: " + count);
+		file.Close();
+	}
 }
-
-/*Expected Output:
-Height - 70 cm, width - 123 cm
-Height - 198 cm, width - 120 cm
-Height - 101 cm, width - 124 cm
-*/
