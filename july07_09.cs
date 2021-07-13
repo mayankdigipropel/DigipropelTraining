@@ -1,6 +1,6 @@
 using System;
 using System.IO;
-class ReadFriendRecords
+class FileRecords
 {
     public static void Main()
     {
@@ -22,18 +22,15 @@ class ReadFriendRecords
                     Console.WriteLine(record);
                 }
                
-                
                     record = reader.ReadLine();
-                
+               
             }
         finally
         {
             //Closing the file
             reader.Close();
             inFile.Close();
-        }
-        
-        
+        }   
         Console.ReadLine();
     }
 }
