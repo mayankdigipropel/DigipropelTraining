@@ -1,37 +1,52 @@
 using System;
-public  class Table // created a class called Table
-    {
-        //  declared private variables
-        private int width = 0; 
-        private int height = 0; 
-
-        public Table(int width, int height)   //created parameterized constructor
-        {
-            if (width >= 0) this.width = width;
-            if (height >= 0) this.height = height;
-        }
-        public void ShowData()
-        {
-            Console.WriteLine("Height - {0} cm, width - {1} cm", height, width);
-        }
-        public static void Main(string[] args)
-        {
-            Table[] arr = new Table[10];
-            Random value = new Random();  //generate random values in arr
-            for(int i = 0; i<10; i++)
-                arr[i] = new Table(value.Next(50, 200), value.Next(50,200));
-            foreach (var i in arr)
-                i.ShowData();
-        }
+//Create a class named "Table". It must have a constructor, indicating the width and height of the board
+public class Table // Created a class Table
+{
+ private float width, height; //declared private width and height 
+ public Table(float width, int height)
+ {
+     this.width=width;
+     this.height=height;
+ }
+	public float Width
+ {
+ set { width = value; }
+ get { return width; }
+ }
+ public float Height
+ {
+ set { height = value; }
+ get { return height; }
+ }
+ //method "ShowData" which will write on the screen the width and that height of the table.
+	public void Showdata()
+		{
+		    Console.WriteLine("Width: "+width.ToString()+"\nHeigth: "+ height.ToString());
+		    
+		}
+}
+ // class table ended
+	public class Program{
+public void Main()
+{
+	int i;
+	//Create an array containing 10 tables, with random sizes between 50 and 200 cm, and display all the data.
+	Table[] obj = new Table[10]; // Created a Table with 10 array size
+	Random rndgen = new Random();// declared for random size 
+	for (i=0; i<10; i++)
+		obj[i] = new Table(rndgen.Next(50, 201), rndgen.Next(50, 201)); // looping through array to get random size bet 50 and 200.
+	for (i=0; i<10; i++)
+ 		obj[i].Showdata();
+}
 }
 /*
-Height - 172 cm, width - 148 cm
-Height - 119 cm, width - 97 cm
-Height - 83 cm, width - 193 cm
-Height - 143 cm, width - 95 cm
-Height - 80 cm, width - 60 cm
-Height - 109 cm, width - 186 cm
-Height - 182 cm, width - 119 cm
-Height - 167 cm, width - 60 cm
-Height - 156 cm, width - 100 cm
-Height - 69 cm, width - 111 cm*/
+output : Width: 52, Heigth: 176
+Width: 132, Heigth: 102
+Width: 128, Heigth: 77
+Width: 156, Heigth: 87
+Width: 152, Heigth: 115
+Width: 140, Heigth: 92
+Width: 138, Heigth: 139
+Width: 151, Heigth: 179
+Width: 52, Heigth: 140
+Width: 184, Heigth: 165*/
