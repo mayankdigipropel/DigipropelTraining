@@ -1,5 +1,5 @@
 using System;
- 
+ //C# program that requests three names of people from the user and stores them in an array of objects of type Person
 public class Program
 {
     public static void Main(string[] args) 
@@ -21,7 +21,7 @@ public class Program
         }
     }
 }
- 
+ //first create a Person class that has a Name property of type string and override the ToString() method.
     public class Person
     {
         public string Name { get; set; } //using get method returns the value of the variable name
