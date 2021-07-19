@@ -3,7 +3,7 @@ window.onload = () =>
     {
         /*calling a function calculateTip
          which will calculate the tip for the bill.*/
-        document.querySelector('#calculate').onclick = calculateTip;
+        document.querySelector('#calculate').onclick = calculateButton;
     }
   
 function calculateButton() {
