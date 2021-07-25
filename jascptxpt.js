@@ -11,13 +11,9 @@ function calculateButton() {
     variables for further calculations.*/
     let amount = document.querySelector('#amount').value;
     let persons = document.querySelector('#persons').value;
-    let service = document.querySelector('#services').value;
+    let service = document.querySelector('#service').value;
   
-    console.log(service);
 
-  
-    
-  
     /*calculating the tip by multiplying total-bill and type of
      service; then dividing it by number of persons.*/
     //fixing the total amount upto 2 digits of decimal
@@ -25,6 +21,6 @@ function calculateButton() {
     total = total.toFixed(2);
   
     //finally displaying the tip value 
-    //document.querySelector('.button').style.display = 'block';
+    //document.querySelector('.tip').style.display = 'block';
     document.querySelector('#total').innerHTML = total;
 }
